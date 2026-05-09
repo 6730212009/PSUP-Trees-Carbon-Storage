@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tree Survey Advanced Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vendors/leaflet/1.9.4/leaflet.css" />
+    <link rel="stylesheet" href="styles/webmap.css" />
+
+</head>
+<body>
+
+    <h2 style="color: #2e7d32;">🌳 Tree Inventory: Biomass & Carbon Tracking</h2>
+    <div class="search-wrapper">
+  <div id="noResultMsg" class="no-result">❌ ไม่พบข้อมูล</div>
+  <input id="treeSearch" type="text" placeholder="🔍 ค้นหาชื่อต้นไม้..." class="search-box">
+</div>
+<!-- FILTER PANEL -->
+
+<div class="filter-panel">
+
+        <select id="zoneFilter">
+
+        <option value="">
+            ทุกโซน
+        </option>
+
+    </select>
+
+    <select id="speciesFilter">
+
+        <option value="">
+            ทุกชนิดต้นไม้
+        </option>
+
+    </select>
+
+    <select id="typeFilter">
+
+        <option value="">
+            ทุกประเภทพรรณไม้
+        </option>
+
+    </select>
+
+<button id="resetFilterBtn">
+    รีเซ็ตตัวกรอง
+</button>
+</div>
+
+    <div id="trees-map"></div>
+    <!-- TOP 5 DROPDOWN -->
+
+<div id="topTreesDropdown" class="top-trees-dropdown">
+
+    <div class="dropdown-title">
+        🌳 5 อันดับปริมาณคาร์บอนในต้นไม้
+    </div>
+
+    <div id="topTreesContent"></div>
+
+</div>
+    <script src="spdata/trees_data.js"></script>
+    <script src="vendors/leaflet/1.9.4/leaflet.js"></script>
+    <script src="scripts/webmap.js"></script>
+</body>
+</html>
