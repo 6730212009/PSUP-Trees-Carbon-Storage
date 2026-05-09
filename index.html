@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>PSUP Trees Carbon Storage</title>
+
+<link rel="stylesheet"
+href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="styles/web.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@100;200;300;400;500;600;700&family=Mitr:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<!-- OVERLAY -->
+
+<div id="menuOverlay"
+onclick="closeMenu()"></div>
+
+<!-- SIDEBAR -->
+
+<nav class="w3-sidebar w3-bar-block w3-card w3-top
+menu-sidebar"
+id="mySidebar">
+
+<!-- HOME -->
+
+<a href="javascript:void(0)"
+onclick="showSection('home')"
+class="w3-bar-item w3-button menu-item">
+
+<img src="images/favicon/home.png"
+class="menu-icon">
+
+<span>HOME</span>
+
+</a>
+
+<!-- TREES TABLE -->
+
+<a href="javascript:void(0)"
+onclick="showSection('treesTable')"
+class="w3-bar-item w3-button menu-item">
+
+<img src="images/favicon/tree.png"
+class="menu-icon">
+
+<span>TREES TABLE</span>
+
+</a>
+
+<!-- TREES SPECIES -->
+
+<a href="javascript:void(0)"
+onclick="showSection('species')"
+class="w3-bar-item w3-button menu-item">
+
+<img src="images/favicon/catalogue.png"
+class="menu-icon">
+
+<span>TREES SPECIES</span>
+
+</a>
+
+<!-- TREES MAP -->
+
+<a href="javascript:void(0)"
+onclick="showSection('map')"
+class="w3-bar-item w3-button menu-item">
+
+<img src="images/favicon/map.png"
+class="menu-icon">
+
+<span>TREES MAP</span>
+
+</a>
+
+<!-- CHARTS (เมนูใหม่) -->
+<a href="javascript:void(0)"
+onclick="showSection('charts')"
+class="w3-bar-item w3-button menu-item">
+
+<img src="images/favicon/bar-chart.png"
+class="menu-icon">
+
+<span>TREES CHARTS</span>
+</a>
+
+<!-- ABOUT -->
+<a href="javascript:void(0)"
+onclick="showSection('about')"
+class="w3-bar-item w3-button menu-item">
+
+<img src="images/favicon/help.png"
+class="menu-icon">
+
+<span>ABOUT</span>
+</a>
+
+
+
+</nav>
+
+<!-- TOPBAR -->
+
+<div class="w3-top">
+
+<div class="w3-white w3-xlarge topbar">
+
+<!-- MENU BUTTON -->
+
+<div class="w3-button w3-padding-16"
+id="menuBtn"
+onclick="toggleMenu()">
+
+☰
+
+</div>
+
+<!-- TITLE -->
+
+<div class="top-title">
+
+<a href="javascript:void(0)"
+onclick="showSection('home')">
+
+PSUP Trees Carbon Storage
+
+</a>
+
+</div>
+
+<!-- SEARCH -->
+
+<div class="w3-padding-16" id="searchContainer">
+
+<input
+type="text"
+id="searchInput"
+class="w3-input w3-border search-box"
+placeholder="Search..."
+oninput="searchItems()"
+>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE CONTENT -->
+
+<div class="w3-main w3-content w3-padding"
+style="max-width:1200px;margin-top:100px">
+
+<!-- HOME SECTION -->
+
+<div id="home"
+class="section active">
+
+<div class="w3-row-padding w3-padding-16 w3-center"
+id="food"></div>
+
+<div class="w3-center w3-padding-32">
+
+<div class="w3-bar"
+id="pagination"></div>
+
+</div>
+
+</div>
+
+<!-- TREES TABLE -->
+
+<div id="treesTable"
+class="section">
+
+<h2 class="w3-center">
+TREES TABLE
+</h2>
+
+<iframe
+src="diy_6730212009.html"
+class="page-frame">
+</iframe>
+
+</div>
+
+<!-- TREES SPECIES -->
+
+<div id="species"
+class="section">
+
+<h2 class="w3-center">
+TREES SPECIES
+</h2>
+
+<iframe
+src="plant_catalog (1).html"
+class="page-frame">
+</iframe>
+
+</div>
+
+<!-- TREES MAP -->
+
+<div id="map"
+class="section">
+
+<h2 class="w3-center">
+TREES MAP
+</h2>
+
+<iframe
+src="webmap.html"
+class="page-frame">
+</iframe>
+
+</div>
+
+<!-- CHARTS -->
+
+<div id="charts" class="section">
+
+<h2 class="w3-center">TREES CHARTS</h2>
+
+<div class="w3-container">
+
+<canvas id="chart1"></canvas>
+<br><br>
+
+<canvas id="chart2"></canvas>
+<br><br>
+
+<canvas id="chart3"></canvas>
+
+<br><br>
+<canvas id="chart4"></canvas>
+</div>
+
+</div>
+
+<!-- ABOUT -->
+
+<div id="about"
+class="section">
+
+<div class="w3-container w3-padding-32 w3-center">
+
+<h1>About PSUP Trees Carbon Storage</h1>
+
+<img src="images\favicon\IMG_3022.jpg"
+class="w3-image"
+style="max-width:800px;width:100%">
+
+<div class="w3-padding-32">
+
+<h3>
+การศึกษาการกักเก็บคาร์บอนใน PSU Phuket
+</h3>
+
+<h5>
+เรียนรู้ระบบนิเวศสีเขียว
+เพื่อมหาวิทยาลัยที่ยั่งยืน
+</h5>
+
+<p>
+
+เว็บไซต์ PSUP Trees Carbon Storage นี้จัดทำขึ้นเพื่อศึกษาการกักเก็บ
+ปริมาณคาร์บอนของต้นไม้ภายในมหาวิทยาลัย
+สงขลานครินทร์ วิทยาเขตภูเก็ต
+โดยมุ่งสำรวจบทบาทของพื้นที่สีเขียว
+ในการช่วยดูดซับคาร์บอน
+ลดผลกระทบต่อสิ่งแวดล้อม
+และสนับสนุนการพัฒนาอย่างยั่งยืน
+
+</p>
+
+<div class="w3-panel w3-light-grey w3-padding-16 w3-round-large" style="margin-top:30px">
+
+<h4>ส่วนหนึ่งของรายวิชา</h4>
+
+<p>
+เว็บไซต์นี้เป็นส่วนหนึ่งของรายวิชา
+<span style="font-weight:600;">
+(988-023 MODULE:ADVANCE IN GEOINFORMATICS)
+</span>
+เพื่อใช้ในการศึกษาและวิเคราะห์การกักเก็บคาร์บอนของต้นไม้
+</p>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="w3-container w3-padding-32
+w3-center">
+
+<h4>
+PSUP Trees Carbon Storage
+</h4>
+
+<p>
+Carbon Storage Study Project
+</p>
+
+</footer>
+
+</div>
+
+<!-- IMAGE MODAL -->
+
+<div id="imageModal"
+class="image-modal">
+
+<span
+class="close-modal"
+onclick="closeImage()">
+
+&times;
+
+</span>
+
+<img id="modalImage">
+
+</div>
+
+<script>
+
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="trees_data.js"></script>
+<script src="scripts/web.js"></script>
+</body>
+</html>
