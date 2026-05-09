@@ -1,0 +1,287 @@
+#trees-map { height: 750px; width: 100%; border-radius: 12px; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 20px; background: #eceff1; }
+        
+        /* Make the Layer Control scrollable and fixed height if it gets too long */
+        .leaflet-control-layers-list {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .popup-card { min-width: 200px; }
+        .popup-header { font-weight: bold; color: #1b5e20; border-bottom: 2px solid #81c784; margin-bottom: 8px; }
+        .stat-label { font-size: 0.85em; color: #666; }
+        .stat-value { font-weight: 600; float: right; }
+        /* กล่องรวม search + ข้อความ */
+        .search-wrapper {
+        position: absolute;
+        top: 83px;
+        left: 65px;
+        z-index: 1000;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        }
+
+        /* ช่องค้นหา */
+        .search-box {
+        padding: 8px;
+        width: 220px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        }
+
+        /* ข้อความไม่พบ */
+        .no-result {
+        display: none;
+        color: red;
+        font-weight: bold;
+        background: white;
+        padding: 6px 10px;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        /* DROPDOWN TOP TREES */
+
+.top-trees-dropdown{
+
+    position:absolute;
+
+    top:145px;
+    left:20px;
+
+    z-index:1200;
+
+    width:240px;
+
+    background:white;
+
+    border-radius:10px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+
+    padding:10px;
+
+    display:none;
+
+    animation:slideDown 0.2s ease;
+}
+
+.dropdown-title{
+
+    font-weight:bold;
+
+    font-size:15px;
+
+    color:#2e7d32;
+
+    margin-bottom:8px;
+}
+
+.top-tree-item{
+
+    padding:8px;
+
+    margin-bottom:6px;
+
+    border-radius:7px;
+
+    background:#f5f5f5;
+
+    cursor:pointer;
+
+    transition:0.2s;
+
+    font-size:13px;
+}
+
+.top-tree-item:hover{
+
+    background:#e8f5e9;
+}
+
+.top-tree-item.first{
+
+    background:#fff3cd;
+
+    border-left:5px solid #ff9800;
+}
+
+@keyframes slideDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* FILTER PANEL */
+
+.filter-panel{
+
+    position:absolute;
+
+    top:200px;   /* ↓ ลงมาอยู่ใต้ Top 5 */
+    left:32px;   /* ← ชิดซ้ายเหมือน Top 5 */
+
+    z-index:1200;
+
+    background:white;
+
+    padding:8px;
+
+    border-radius:8px;
+
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+
+    display:flex;
+
+    flex-direction:column; /* เรียงลง */
+
+    gap:6px;
+
+    width:240px;
+}
+
+.filter-panel select{
+
+    padding:5px 6px;
+
+    border-radius:5px;
+
+    border:1px solid #ccc;
+
+    font-size:12px;
+
+    width:100%;
+}
+
+/* RESET BUTTON */
+
+#resetFilterBtn{
+
+    padding:8px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:#e53935;
+
+    color:white;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+    transition:0.2s;
+
+}
+
+#resetFilterBtn:hover{
+
+    background:#c62828;
+
+}
+
+/* LEGEND */
+
+.legend{
+
+    background:white;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+
+    max-height:150px;
+
+    overflow-y:auto;
+
+    width:180px;
+
+    font-size:12px;
+}
+
+.legend-title{
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+    color:#2e7d32;
+}
+
+.legend-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:5px;
+}
+
+.legend-color{
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    border:1px solid #555;
+
+    display:inline-block;
+}
+
+/* LEGEND POSITION */
+
+/* LEGEND */
+
+.info.legend{
+
+    background:white;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+
+    width:170px;
+
+    max-height:220px;
+
+    overflow-y:auto;
+
+    font-size:12px;
+
+    line-height:18px;
+
+    margin-left:20px;   /* เลื่อนซ้าย-ขวา */
+    
+    margin-bottom:100px; /* เลื่อนขึ้น-ลง */
+
+}
+
+/* ย้าย legend */
+
+.leaflet-bottom.leaflet-left{
+
+    bottom: 285px !important;
+
+    left: 2px !important;
+
+}
